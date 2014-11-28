@@ -1,0 +1,36 @@
+# Project: 访问者模式
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = Visitor.o Element.o main.o $(RES)
+LINKOBJ  = Visitor.o Element.o main.o $(RES)
+LIBS =  -L"D:/3 studySoftware/DEV-CPP/Lib"  
+INCS =  -I"D:/3 studySoftware/DEV-CPP/include" 
+CXXINCS =  -I"D:/3 studySoftware/DEV-CPP/lib/gcc/mingw32/3.4.2/include"  -I"D:/3 studySoftware/DEV-CPP/include/c++/3.4.2/backward"  -I"D:/3 studySoftware/DEV-CPP/include/c++/3.4.2/mingw32"  -I"D:/3 studySoftware/DEV-CPP/include/c++/3.4.2"  -I"D:/3 studySoftware/DEV-CPP/include" 
+BIN  = 访问者模式.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before 访问者模式.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "访问者模式.exe" $(LIBS)
+
+Visitor.o: Visitor.cpp
+	$(CPP) -c Visitor.cpp -o Visitor.o $(CXXFLAGS)
+
+Element.o: Element.cpp
+	$(CPP) -c Element.cpp -o Element.o $(CXXFLAGS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
